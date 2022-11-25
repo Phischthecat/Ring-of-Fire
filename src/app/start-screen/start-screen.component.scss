@@ -1,0 +1,155 @@
+.start-screen {
+    background: no-repeat url('./../../assets/img/table.jpg') center / cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .plate {
+        height: 100vh;
+    }
+
+    .cardContainer {
+        height: 100vh;
+        width: 700px;
+        position: absolute;
+    }
+
+    .card {
+        position: absolute;
+        height: 35vh;
+    }
+
+    .left {
+        left: -90px;
+        transform: rotate(-20deg)
+    }
+
+    .right {
+        right: -90px;
+        transform: rotate(20deg);
+    }
+
+    .top {
+        z-index: 1;
+        animation: slideInTop 2.5s forwards;
+    }
+    
+    .bottom {
+        animation: slideInBottom 3s forwards;
+    }
+
+}
+
+@keyframes slideInTop {
+    0% {
+        top: 150vh;
+    } 
+    60% {
+        top: 12%
+    }
+    100% {
+        top: 15%;
+    }
+}
+
+@keyframes slideInBottom {
+    0% {
+        bottom: 150vh;
+    } 
+    60% {
+        bottom: 17%;
+    }
+    100% {
+       bottom: 20%;
+    }
+}
+
+.startBtnContainer {
+    position: absolute;
+    right: 0;
+    bottom: 75px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+
+    button {
+        height: 75px;
+        width: 200px;
+        border-radius: 10px;
+        border: none;
+        background-color: black;
+        color: white;
+        box-shadow: 3px 3px 3px 2px rgba(255,255,255,0.3);
+        font-size: 30px;
+        font-weight: 800;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.5s;
+        
+        &:hover {
+            background-color: white;
+            color: black;
+            box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.3);
+        }
+    }
+}
+
+.movingTopRight {
+    z-index: 1;
+    top: 15%;
+    animation: moveTopRight 5s ease-in-out infinite alternate;
+}
+
+@keyframes moveTopRight {
+    from {
+        transform: translateY(0) rotate(20deg);
+    }
+    to {
+        transform: translateY(8%) rotate(23deg);
+    }
+}
+
+.movingBottomRight {
+    bottom: 20%;
+    animation: moveBottomRight 5s ease-in-out infinite alternate;
+}
+
+@keyframes moveBottomRight {
+    from {
+        transform: translateY(0) rotate(20deg);
+    }
+    to {
+        transform: translateY(-6%) rotate(16deg);
+    }
+}
+
+.movingTopLeft {
+    z-index: 1;
+    top: 15%;
+    animation: moveTopLeft 5s ease-in-out infinite alternate;
+}
+
+@keyframes moveTopLeft {
+    from {
+        transform: translateY(0) rotate(-20deg);
+    }
+    to {
+        transform: translateY(8%) rotate(-24deg);
+    }
+}
+
+.movingBottomLeft {
+    bottom: 20%;
+    animation: moveBottomLeft 5s ease-in-out infinite alternate;
+}
+
+@keyframes moveBottomLeft {
+    from {
+        transform: translateY(0) rotate(-20deg);
+    }
+    to {
+        transform: translateY(-7%) rotate(-18deg);
+    }
+}

@@ -1,0 +1,31 @@
+<div class="field">
+  <div class="cardStack">
+    <!-- Stack of unplayed cards -->
+    <img
+      [ngStyle]="{ 'right.px': i * 5 }"
+      *ngFor="let c of [0, 1, 2, 3]; let i = index"
+      src="./../../assets/img/cards/card-back.svg"
+    />
+    <img
+      class="topCard"
+      (click)="takeCard()"
+      [ngStyle]="{ 'right.px': 20 }"
+      src="./../../assets/img/cards/card-back.svg"
+    />
+    <!-- Stack of played cards -->
+    <img
+      *ngFor="let card of game?.playedCards"
+      class="playedCard"
+      src="./../../assets/img/cards/{{ card }}.svg"
+      alt=""
+    />
+    <!-- current card (Animation) -->
+    <img
+      *ngIf="pickCardAnimation"
+      class="pickCard"
+      (click)="takeCard()"
+      [ngStyle]="{ 'right.px': 20 }"
+      src="./../../assets/img/cards/{{ currentCard }}.svg"
+    />
+  </div>
+</div>

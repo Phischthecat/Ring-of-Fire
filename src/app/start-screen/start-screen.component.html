@@ -1,0 +1,41 @@
+<div class="start-screen">
+  <img
+    class="plate"
+    src="./../../assets/img/background-plate1.png"
+    alt="start-screen"
+  />
+  <div class="cardContainer">
+    <img
+      [class.movingTopLeft]="animation"
+      [class.top]="!animation"
+      class="card top left"
+      src="./../../assets/img/cards/clubs-13.svg"
+      alt=""
+    />
+    <img
+      [class.movingBottomLeft]="animation"
+      [class.bottom]="!animation"
+      class="card bottom left"
+      src="./../../assets/img/cards/diamonds-13.svg"
+      alt=""
+    />
+    <img
+      [class.movingTopRight]="animation"
+      [class.top]="!animation"
+      class="card top right"
+      src="./../../assets/img/cards/spades-13.svg"
+      alt=""
+    />
+    <img
+      [class.movingBottomRight]="animation"
+      [class.bottom]="!animation"
+      class="card bottom right"
+      src="./../../assets/img/cards/hearts-13.svg"
+      alt=""
+    />
+  </div>
+
+  <div class="startBtnContainer">
+    <button (click)="newGame()">Ready?</button>
+  </div>
+</div>
