@@ -1,20 +1,30 @@
+<app-player
+  *ngFor="let player of game.players; let i = index"
+  [playerActive]="i == game.currentPlayer"
+  [name]="player"
+  [ngStyle]="{ 'left.px': 60 + i * 110 }"
+  class="playerContainer"
+></app-player>
+<!--
+  [name]="player" übergibt die variable name an die Unterkomponente. Muss mit @Input in der Unterkomponente eingebunden werden 
+  und kann dann im HTML der Unterkomponente als Variable eingesetzt werden 
+-->
 <div class="field">
   <div class="cardStack">
     <!-- Stack of unplayed cards -->
     <img
-      [ngStyle]="{ 'right.px': i * 5 }"
+      [ngStyle]="{ 'right.px': 50 + i * 5 }"
       *ngFor="let c of [0, 1, 2, 3]; let i = index"
       src="./../../assets/img/cards/card-back.svg"
     />
     <img
       class="topCard"
       (click)="takeCard()"
-      [ngStyle]="{ 'right.px': 20 }"
       src="./../../assets/img/cards/card-back.svg"
     />
     <!-- Stack of played cards -->
     <img
-      *ngFor="let card of game?.playedCards"
+      *ngFor="let card of game.playedCards"
       class="playedCard"
       src="./../../assets/img/cards/{{ card }}.svg"
       alt=""
@@ -23,9 +33,13 @@
     <img
       *ngIf="pickCardAnimation"
       class="pickCard"
-      (click)="takeCard()"
-      [ngStyle]="{ 'right.px': 20 }"
       src="./../../assets/img/cards/{{ currentCard }}.svg"
     />
   </div>
 </div>
+
+<app-game-info [card]="currentCard" class="gameInfoContainer"></app-game-info>
+
+<button mat-fab color="primary" (click)="openDialog()" class="btnAdd">
+  <mat-icon> person_add </mat-icon>
+</button>

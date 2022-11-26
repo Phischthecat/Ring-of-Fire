@@ -1,0 +1,29 @@
+.player {
+display: flex;
+align-items: center;
+flex-direction: column;
+width: 100px;
+height: 100px;
+
+gap: 16px;
+background-color: rgba(211, 211, 211, 0.8);
+border-bottom-left-radius: 50px;
+border-bottom-right-radius: 50px;
+overflow: hidden;
+
+span {
+    margin-top: 16px;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+    img {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+    }
+}
+
+.player-active {    
+    font-weight: 900;
+    background-color: rgb(228, 54, 31);
+}

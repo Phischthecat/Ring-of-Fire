@@ -12,11 +12,13 @@ position: relative;
     img {
         position: absolute;
         height: 200px;
+        top: 40px;
     }
 
 }
 .topCard {
     cursor: pointer;
+    right: 70px;
     transition: alll 125ms ease-in-out;
     &:hover {
         transform: scale(1.1) translate(-10px);
@@ -24,6 +26,7 @@ position: relative;
 }
 
 .pickCard {
+    right: 70px;
     animation: pickCardAnimation 1.5s forwards;
 }
 
@@ -41,6 +44,26 @@ position: relative;
 }
 
 .playedCard {
-    right: 20px;
+    right: 70px;
     transform: scale(1.1) translateX(180px) translateY(-220px) rotate(20deg);
 }
+
+.playerContainer {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.btnAdd {
+    position: absolute;
+    right: 32px;
+    bottom: 32px;
+}
+
+.gameInfoContainer {
+    position: absolute;
+    right: 10%;
+    top: 45%;
+}
+
